@@ -1,4 +1,4 @@
-# AIFFEL Campus Online 5th Code Peer Review
+# AIFFEL Campus Online 6th Code Peer Review
 - 코더 : 김산
 - 리뷰어 : 본인의 이름을 작성하세요.
 
