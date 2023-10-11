@@ -23,12 +23,12 @@
                 # Discrminator 손실 계산
                 disc_loss = get_disc_loss(fake_disc, real_disc)
             
-        gene_gradient = gene_tape.gradient(gene_total_loss, generator.trainable_variables)
-        disc_gradient = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
-        
-        gene_opt.apply_gradients(zip(gene_gradient, generator.trainable_variables))
-        disc_opt.apply_gradients(zip(disc_gradient, discriminator.trainable_variables))
-        return gene_loss, l1_loss, disc_loss
+            gene_gradient = gene_tape.gradient(gene_total_loss, generator.trainable_variables)
+            disc_gradient = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
+            
+            gene_opt.apply_gradients(zip(gene_gradient, generator.trainable_variables))
+            disc_opt.apply_gradients(zip(disc_gradient, discriminator.trainable_variables))
+            return gene_loss, l1_loss, disc_loss
       ```
     - segmented image를 입력하여 fake image를 생성해야 하는데 ground truth 이미지를 입력으로 넣었다.ㅠㅠ
 
