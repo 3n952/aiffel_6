@@ -1,40 +1,56 @@
 # AIFFEL Campus Online Code Peer Review
-- 코더 : 코더의 이름을 작성하세요.
-- 리뷰어 : 리뷰어의 이름을 작성하세요.
+- 코더 : 김산
+- 리뷰어 : 김서연
 
 
 # PRT(Peer Review)
 - [ ]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
-    - 문제에서 요구하는 최종 결과물이 첨부되었는지 확인
-    - 문제를 해결하는 완성된 코드란 프로젝트 루브릭 3개 중 2개, 
-    퀘스트 문제 요구조건 등을 지칭
-        - 해당 조건을 만족하는 코드를 캡쳐해 근거로 첨부
+    - <img width="596" alt="스크린샷 2023-10-11 오후 12 03 05" src="https://github.com/3n952/aiffel_6/assets/112914475/68d7f7d7-7f18-4d61-9263-e8bb74b862be">
+    - ```python
+      #train function
+
+    @tf.function
+    def train_step(gt, seg):
+        with tf.GradientTape() as gene_tape, tf.GradientTape() as disc_tape:
+            # Generator 예측
+            fake_colored = generator(gt, training=True) # 리뷰어 주석: 여기서 generator에 seg를 넣어야 한다
+            # Discriminator 예측
+            fake_disc = discriminator(gt, fake_colored, training=True)
+            real_disc = discriminator(gt, seg, training=True)
+            # Generator 손실 계산
+            gene_loss, l1_loss = get_gene_loss(fake_colored, seg, fake_disc)
+            gene_total_loss = gene_loss + (100 * l1_loss) ## L1 손실 반영 λ=100
+            # Discrminator 손실 계산
+            disc_loss = get_disc_loss(fake_disc, real_disc)
+            
+        gene_gradient = gene_tape.gradient(gene_total_loss, generator.trainable_variables)
+        disc_gradient = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
+        
+        gene_opt.apply_gradients(zip(gene_gradient, generator.trainable_variables))
+        disc_opt.apply_gradients(zip(disc_gradient, discriminator.trainable_variables))
+        return gene_loss, l1_loss, disc_loss
+      ```
+    - segmented image를 입력하여 fake image를 생성해야 하는데 ground truth 이미지를 입력으로 넣었다.ㅠㅠ
+
     
 - [ ]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
-    - 해당 코드 블럭에 doc string/annotation이 달려 있는지 확인
-    - 해당 코드가 무슨 기능을 하는지, 왜 그렇게 짜여진건지, 작동 메커니즘이 뭔지 기술.
-    - 주석을 보고 코드 이해가 잘 되었는지 확인
-        - 잘 작성되었다고 생각되는 부분을 캡쳐해 근거로 첨부합니다.
-        
+    - <img width="635" alt="스크린샷 2023-10-11 오후 12 13 14" src="https://github.com/3n952/aiffel_6/assets/112914475/d61dc231-40e2-47fa-9234-eb3be1c30d6a">
+    - data augmentation에서 어떤 작업을 했는지 주석으로 남기면 좋을 것 같다.
 - [ ]  **3. 에러가 난 부분을 디버깅하여 문제를 “해결한 기록을 남겼거나” 
 ”새로운 시도 또는 추가 실험을 수행”해봤나요?**
-    - 문제 원인 및 해결 과정을 잘 기록하였는지 확인
-    - 문제에서 요구하는 조건에 더해 추가적으로 수행한 나만의 시도, 
-    실험이 기록되어 있는지 확인
-        - 잘 작성되었다고 생각되는 부분을 캡쳐해 근거로 첨부합니다.
+    - 특별히 없음.
         
 - [ ]  **4. 회고를 잘 작성했나요?**
-    - 주어진 문제를 해결하는 완성된 코드 내지 프로젝트 결과물에 대해
-    배운점과 아쉬운점, 느낀점 등이 기록되어 있는지 확인
-    - 전체 코드 실행 플로우를 그래프로 그려서 이해를 돕고 있는지 확인
-        - 잘 작성되었다고 생각되는 부분을 캡쳐해 근거로 첨부합니다.
+    - 
         
 - [ ]  **5. 코드가 간결하고 효율적인가요?**
-    - 파이썬 스타일 가이드 (PEP8) 를 준수하였는지 확인
-    - 하드코딩을 하지않고 함수화, 모듈화가 가능한 부분은 함수를 만들거나 클래스로 짰는지
-    - 코드 중복을 최소화하고 범용적으로 사용할 수 있도록 함수화했는지
-        - 잘 작성되었다고 생각되는 부분을 캡쳐해 근거로 첨부합니다.
+    - <img width="435" alt="스크린샷 2023-10-11 오후 12 07 43" src="https://github.com/3n952/aiffel_6/assets/112914475/5c0f5eec-e12d-4a94-8142-73bbe68096aa">
+    - constant padding을 넣어서 이미지에 여백이 생겼는데 이 부분이 학습에 영향을 끼치지는 않을까요?
+    - <img width="603" alt="스크린샷 2023-10-11 오후 12 11 06" src="https://github.com/3n952/aiffel_6/assets/112914475/fa648e30-1685-408f-8060-a9a6f5b40c40">
+    - <img width="672" alt="스크린샷 2023-10-11 오후 12 11 17" src="https://github.com/3n952/aiffel_6/assets/112914475/0e610b9c-3152-433a-a840-165a9580ca46">
+    - 사용되지 않는 Encoder, Decoder 클래스가 코드에 남아있다.
+
 
 
 # 참고 링크 및 코드 개선
