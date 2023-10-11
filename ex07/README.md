@@ -9,19 +9,19 @@
     - ```python
       #train function
 
-    @tf.function
-    def train_step(gt, seg):
-        with tf.GradientTape() as gene_tape, tf.GradientTape() as disc_tape:
-            # Generator 예측
-            fake_colored = generator(gt, training=True) # 리뷰어 주석: 여기서 generator에 seg를 넣어야 한다
-            # Discriminator 예측
-            fake_disc = discriminator(gt, fake_colored, training=True)
-            real_disc = discriminator(gt, seg, training=True)
-            # Generator 손실 계산
-            gene_loss, l1_loss = get_gene_loss(fake_colored, seg, fake_disc)
-            gene_total_loss = gene_loss + (100 * l1_loss) ## L1 손실 반영 λ=100
-            # Discrminator 손실 계산
-            disc_loss = get_disc_loss(fake_disc, real_disc)
+        @tf.function
+        def train_step(gt, seg):
+            with tf.GradientTape() as gene_tape, tf.GradientTape() as disc_tape:
+                # Generator 예측
+                fake_colored = generator(gt, training=True) # 리뷰어 주석: 여기서 generator에 seg를 넣어야 한다
+                # Discriminator 예측
+                fake_disc = discriminator(gt, fake_colored, training=True)
+                real_disc = discriminator(gt, seg, training=True)
+                # Generator 손실 계산
+                gene_loss, l1_loss = get_gene_loss(fake_colored, seg, fake_disc)
+                gene_total_loss = gene_loss + (100 * l1_loss) ## L1 손실 반영 λ=100
+                # Discrminator 손실 계산
+                disc_loss = get_disc_loss(fake_disc, real_disc)
             
         gene_gradient = gene_tape.gradient(gene_total_loss, generator.trainable_variables)
         disc_gradient = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
