@@ -14,7 +14,7 @@
 
 ![image](https://github.com/sujin7822/aiffel_6/assets/122075306/3ae70584-4ce4-4467-8a97-ed8ace7c9631)
 
-- KITTI 데이터셋에 대한 분석, RetinaNet 학습이 정상적으로 진행되어 object detection 결과의 시각화, 자율주행 Object Detection 테스트시스템 적용까지 잘하셨습니다.
+- KITTI 데이터셋에 대한 분석, RetinaNet 학습이 정상적으로 진행되어 object detection 결과의 시각화, 자율주행 Object Detection 테스트시스템 적용까지 진행하셨습니다.
     
 - [ ]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
