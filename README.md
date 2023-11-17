@@ -1,7 +1,13 @@
 # - 아이펠 6기 코드 저장소
 
-# Exploration
+# Main Quest
+|Contents|Project|
+|---|---|
+|Main_Quest_1. Image classification|폐렴 진단기 성능 개선|
+|Main_Quest_2. Image segmentation|motocycle 도로 환경 segmentation|
 
+
+# Exploration
 |Contents|Practice|Project|
 |-----|---|---|
 |ex01. Regression|Bike sharing|자전거 대여량 예측|
