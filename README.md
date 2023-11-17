@@ -29,11 +29,7 @@
 |GD05. Segmentation|도로 영역 찾기|
 
 
-# 노드별 퀘스트 디렉토리
-- ex -> exploration node 퀘스트 노드  
-- GD -> going deeper node 퀘스트 노드
-
-# 디렉토리 내 파일 이름
+### 디렉토리 내 파일 이름
 - pr : 노드의 '실습' 파일
 - main : 노드의 '프로젝트 제출' 파일
 
