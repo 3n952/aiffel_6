@@ -4,7 +4,7 @@
 |Contents|Project|
 |---|---|
 |Main_Quest_1. Image classification|폐렴 진단기 성능 개선|
-|Main_Quest_2. Image segmentation|motocycle 도로 환경 segmentation|
+|Main_Quest_2. Image segmentation|motocycle 도로 환경 segmentation|
 
 
 # Exploration
