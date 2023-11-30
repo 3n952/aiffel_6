@@ -4,7 +4,8 @@
 |Contents|Project|
 |---|---|
 |Main_Quest_1. Image classification|폐렴 진단기 성능 개선|
-|Main_Quest_2. Image segmentation|motocycle 도로 환경 segmentation|
+|Main_Quest_2. Image segmentation|motocycle night ride segmentation|
+|DLthon. semantic segmentation|motocycle night ride - model 비교|
 
 
 # Exploration
@@ -27,7 +28,7 @@
 |GD03. Class Activation Map|CAM, Grad-CAM|
 |GD04. Object Detection|자율주행 보조 시스템|
 |GD05. Segmentation|도로 영역 찾기|
-
+|GD05. text detection + recognition|End to end OCR|
 
 ### 디렉토리 내 파일 이름
 - pr : 노드의 '실습' 파일
