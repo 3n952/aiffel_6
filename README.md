@@ -28,7 +28,8 @@
 |GD03. Class Activation Map|CAM, Grad-CAM|
 |GD04. Object Detection|자율주행 보조 시스템|
 |GD05. Segmentation|도로 영역 찾기|
-|GD05. text detection + recognition|End to end OCR|
+|GD06. text detection + recognition|End to end OCR|
+|GD07. Object Detection|face detection|
 
 ### 디렉토리 내 파일 이름
 - pr : 노드의 '실습' 파일
