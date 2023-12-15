@@ -33,6 +33,13 @@
 |GD08. Keypoint Detection|행동 스티커 만들기|
 |GD09. Generative AI(multi modal)|Stable Diffusion|
 
+
+# Slow Paper - CV
+|paper|
+|Image style transfer using convolutional neural network|
+
+
+
 ### 디렉토리 내 파일 이름
 - pr : 노드의 '실습' 파일
 - main : 노드의 '프로젝트 제출' 파일
