@@ -6,7 +6,7 @@
 |Main_Quest1. Image classification|폐렴 진단기 성능 개선|
 |Main_Quest2. Image segmentation|motocycle night ride segmentation|
 |DLthon. semantic segmentation|motocycle night ride - model 비교|
-|Main_Quest4. GD내용을 바탕으로 논문 작성해보기|
+|Main_Quest4.|GD내용을 바탕으로 논문 작성해보기|
 
 # Exploration
 |Contents|Practice|Project|
