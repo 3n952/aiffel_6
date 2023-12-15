@@ -36,6 +36,7 @@
 
 # Slow Paper - CV
 |paper|
+|---|
 |Image style transfer using convolutional neural network|
 
 
