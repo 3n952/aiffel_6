@@ -3,10 +3,10 @@
 # Main Quest
 |Contents|Project|
 |---|---|
-|Main_Quest_1. Image classification|폐렴 진단기 성능 개선|
-|Main_Quest_2. Image segmentation|motocycle night ride segmentation|
+|Main_Quest1. Image classification|폐렴 진단기 성능 개선|
+|Main_Quest2. Image segmentation|motocycle night ride segmentation|
 |DLthon. semantic segmentation|motocycle night ride - model 비교|
-
+|Main_Quest4. GD내용을 바탕으로 논문 작성해보기|
 
 # Exploration
 |Contents|Practice|Project|
@@ -30,6 +30,8 @@
 |GD05. Segmentation|도로 영역 찾기|
 |GD06. text detection + recognition|End to end OCR|
 |GD07. Object Detection|face detection|
+|GD08. Keypoint Detection|행동 스티커 만들기|
+|GD09. Generative AI(multi modal)|Stable Diffusion|
 
 ### 디렉토리 내 파일 이름
 - pr : 노드의 '실습' 파일
